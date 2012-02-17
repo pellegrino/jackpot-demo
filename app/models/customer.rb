@@ -13,4 +13,13 @@ class Customer < ActiveRecord::Base
       @jackpot_customer.update_credit_card(Jackpot::Card.new(@credit_card))
     end 
   end 
+
+  def pay_jackpot_subscription
+    jackpot_instance.pay_subscription unless jackpot_instance.nil?
+  end 
+
+  private
+  def jackpot_instance
+    Jackpot::Customer.find self.jackpot_customer_id
+  end 
 end

@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>DemoJackpot</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <!-- header -->
-  <div class="container_12" id="header">
-    <h1 class="logo">
-      <a href="/">
-        Jack<span>pot.</span>
-      </a>
-    </h1>
-  </div>
-  <div class="container_12" id="main">
-    <div class="row">
-      <%= yield %>
+  <head>
+    <title>DemoJackpot</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <!-- header -->
+    <div class="container_12" id="header">
+      <div class="grid_6 prefix_1">
+        <h1 class="logo">
+          <a href="/">
+            Jack<span>pot.</span>
+          </a>
+        </h1>
+      </div>
+
+      <ul id="nav">
+        <li class="grid_1 prefix_2">
+          <a href="/about">About</a>
+        </li>
+      </ul>
+
+      <div class="right ribbon-holder">
+        <a href="#" class="tiled red ribbon">
+          <span class="text">Demo version</span>
+        </a>
+      </div>
+
+      <div class="clear"></div>
     </div>
-  </div>
-</body>
+
+    
+    <div class="container_12" id="main">
+      <div class="row">
+        <%= yield %>
+      </div>
+      <div class="clear"></div>
+      
+      <div id="subnav" class="grid_3"> 
+        <%= link_to "Simulate billing", simulate_billing_path, :method => :put %>
+      </div>
+
+    </div>
+  </body>
 </html>
