@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/pellegrino/jackpot.git
-  revision: 78b5835f7bf87e0d04916fc807da318b5a70b717
+  revision: fffd17093cbfdc1a58b72cfbcda10c3c6e36585f
   specs:
     jackpot (0.0.3)
       activemerchant (~> 1.20.1)
@@ -54,7 +54,7 @@ GEM
     braintree (2.13.4)
       builder (>= 2.0.0)
     builder (3.0.0)
-    devise (2.0.3)
+    devise (2.0.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       railties (~> 3.1)
