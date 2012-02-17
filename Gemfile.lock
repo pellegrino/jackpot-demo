@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/pellegrino/jackpot.git
-  revision: bfe515c552d06ad0f7468ca2c0b5ccadc4f3ac80
+  revision: 70014d2e46158cf97790c3398e17be798302c128
   specs:
     jackpot (0.0.3)
       activemerchant (~> 1.20.1)
@@ -67,7 +67,7 @@ GEM
     formtastic-bootstrap (1.1.1)
       formtastic
       rails (~> 3.1)
-    heroku (2.20.0)
+    heroku (2.20.1)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
       rubyzip

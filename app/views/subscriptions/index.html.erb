@@ -10,7 +10,7 @@
   <ul id="subscriptions-list">
     <% @subscriptions.each do |subscription| %>
       <li class="grid_4">
-        <h2><%= subscription.name %></h2>
+        <h2><%= link_to subscription.name, subscription %></h2>
         <h3 class="price">
           <strong> <%= number_to_currency subscription.price %> </strong>
         </h3>

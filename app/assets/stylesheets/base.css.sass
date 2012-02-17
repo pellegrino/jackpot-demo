@@ -3,12 +3,12 @@ $gray:        #333333
 $light_blue:  #ADC7D9 
 $lighter_blue:#ADC7D9 
 $white:       #FFFFFF
-$barely_white:#EEEEEE
+$barely_white:#EFEFEF
 $red:         red
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu|Rokkitt)
 
-h1, h2, h3 
+h1, h2, h3, h4 
   font-family: 'Ubuntu', Georgia, Times, serif
 
 p
@@ -19,6 +19,16 @@ p
 h1
   font-size:   59px
   line-height: 70px
+h2
+  font-size: 41.3px
+  line-height: 49px
+h3
+  font-size:    19.47px
+  line-height:  23.1px
+
+h4
+  font-size:    15.47px
+  line-height:  18.1px
 
 #header 
   background-color: $dark_gray 
@@ -46,9 +56,12 @@ h1
     li 
       text-align: center
       background-color: $barely_white
+      cursor: pointer
 
       h2
-        color: $red
+        a
+          color: $red
+          text-decoration: none
       h3
         margin-top: -1em
 
@@ -58,3 +71,6 @@ h1
         h2
           color: $gray
 
+legend
+  font-size: 1.8em
+  font-weight: bold

@@ -1,0 +1,75 @@
+
+<h1>
+ You did choose a great plan. 
+</h1>
+
+
+<h2> <%= @subscription.name %> </h2>
+
+<p> 
+  Description: <strong><%= @subscription.description %></strong>  <br>
+  Monthly price: <strong><%= number_to_currency @subscription.price %></strong>
+</p>
+
+
+<div id="new-customer-form">
+
+  <%= form_for @customer do |f| %>
+    <%= f.hidden_field :jackpot_subscription_id %>
+    <ol>
+      <fieldset>
+        <legend>Account details</legend>
+          <p>
+          Now we need some informations to create your account
+          </p>
+
+          <li>
+            <%= f.label      :name %>
+            <%= f.text_field :name %>
+          </li>
+
+          <li>
+            <%= f.label      :email %>
+            <%= f.text_field :email %>
+          </li>
+      </fieldset>
+
+      <fieldset>
+        <legend>Billing details</legend>
+        <p>
+          Don't worry your card will only be billed after 30 days and you can cancel (or change) your subscription anytime.  
+        </p>
+        <li>
+          <label for="customer[credit_card][number]">Number</label>
+          <input type="text" name="customer[credit_card][number]">
+        </li>
+
+        <li>
+          <label for="customer[credit_card][first_name]">First Name</label>
+          <input type="text" name="customer[credit_card][first_name]">
+
+          <label for="customer[credit_card][last_name]">Last Name</label>
+          <input type="text" name="customer[credit_card][last_name]">
+        </li>
+
+        <li>
+          <label for="customer[credit_card][month]">Month</label>
+          <input type="text" name="customer[credit_card][month]">
+          <label for="customer[credit_card][year]">Year</label>
+          <input type="text" name="customer[credit_card][year]">
+        </li>
+
+
+        <li>
+          <label for="customer[credit_card][verification_value]">Verification Value</label>
+          <input type="text" name="customer[credit_card][verification_value]">
+        </li>
+      </fieldset>
+
+      <li>
+        <%= f.submit "Sign me up!" %>
+      </li>
+    <ol>
+   
+  <% end %>
+</div>

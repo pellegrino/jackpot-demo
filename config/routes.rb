@@ -1,5 +1,9 @@
 DemoJackpot::Application.routes.draw do
-  get "subscriptions/index"
+  resources :subscriptions , only: ['index', 'show']
+  resources :customers ,     only: ['create', 'show']
 
   mount Jackpot::Engine => "/billing"
+
+  root :to => "subscriptions#index"
+
 end
