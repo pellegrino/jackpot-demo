@@ -1,0 +1,23 @@
+<div class="row">
+  <div id="callout">
+    <h2>
+      Choose one of our awesome subscription plans so you can be awesome too! 
+    </h2>
+  </div>
+</div>
+
+<div class="row">
+  <ul id="subscriptions-list">
+    <% @subscriptions.each do |subscription| %>
+      <li class="grid_4">
+        <h2><%= subscription.name %></h2>
+        <h3 class="price">
+          <strong> <%= number_to_currency subscription.price %> </strong>
+        </h3>
+        <p class="description">
+          <%= subscription.description %>
+        </p>
+      </li>
+    <% end %> 
+  </ul>
+</div>

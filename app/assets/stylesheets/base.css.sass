@@ -1,0 +1,60 @@
+$dark_gray:   #2C2C2C 
+$gray:        #333333
+$light_blue:  #ADC7D9 
+$lighter_blue:#ADC7D9 
+$white:       #FFFFFF
+$barely_white:#EEEEEE
+$red:         red
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu|Rokkitt)
+
+h1, h2, h3 
+  font-family: 'Ubuntu', Georgia, Times, serif
+
+p
+  font-family: 'Rokkitt', Helvetica, Arial, sans-serif
+  font-size: 16px
+  line-height: 25px
+
+h1
+  font-size:   59px
+  line-height: 70px
+
+#header 
+  background-color: $dark_gray 
+  padding: 15px 0 5px 0
+
+  h1.logo
+    font-family: Ubuntu
+    font-size: 30px
+    padding: 0 0 0 1em
+    a 
+      color: $light_blue
+      span
+        color: $white
+      text-decoration: none
+#main
+  color:   $gray
+  padding: 2em
+
+  #callout
+    text-align: center
+
+  ul#subscriptions-list
+    list-style: none
+
+    li 
+      text-align: center
+      background-color: $barely_white
+
+      h2
+        color: $red
+      h3
+        margin-top: -1em
+
+      &:hover
+        background-color: $light_blue
+
+        h2
+          color: $gray
+
