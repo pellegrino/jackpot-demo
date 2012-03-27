@@ -13,9 +13,9 @@ def card(params)
                     :verification_value => 123)
 end 
 
-Jackpot::Subscription.create :name => 'Gold',   :price => 30, :billing_period => 30
-Jackpot::Subscription.create :name => 'Silver', :price => 20, :billing_period => 30
-Jackpot::Subscription.create :name => 'Bronze', :price => 10, :billing_period => 30
+Jackpot::Subscription.create :name => 'Gold',   :price => 3000, :billing_period => 30
+Jackpot::Subscription.create :name => 'Silver', :price => 2000, :billing_period => 30
+Jackpot::Subscription.create :name => 'Bronze', :price => 1000, :billing_period => 30
 Rails.logger.info "Subscriptions plans created"
 
 Jackpot::User.create :email => 'test@demo.com', :password => 'jackpot', :password_confirmation => 'jackpot'
