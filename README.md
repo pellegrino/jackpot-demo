@@ -7,7 +7,7 @@ This is a simple rails 3.2 application featuring a fake subscription based web a
 
 ## Login details
 
-To access jackpot dashboard use the following information:
+To access jackpot dashboard (http://jackpot-demo.herokuapp.com/billing)  use the following information:
 
         login (email):  test@demo.com
         password: jackpot
