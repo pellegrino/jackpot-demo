@@ -12,6 +12,7 @@ task :delete_existing_data => :environment do
   Jackpot::User.delete_all
   Jackpot::Customer.delete_all
   Jackpot::Subscription.delete_all
+  Jackpot::Payment.delete_all
 
   Customer.delete_all
 end 

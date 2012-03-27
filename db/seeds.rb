@@ -15,11 +15,11 @@ def card_hash(params)
   }
 end 
 
-gold = Jackpot::Subscription.create :name => 'Gold',   :price => 3000, :billing_period => 30
-silver = Jackpot::Subscription.create :name => 'Silver', :price => 2000, :billing_period => 30
-bronze = Jackpot::Subscription.create :name => 'Bronze', :price => 1000, :billing_period => 30
-
+gold = Jackpot::Subscription.create :name => 'Gold',     :description => "Gold Plan",   :price => 3000, :billing_period => 30
+silver = Jackpot::Subscription.create :name => 'Silver', :description => "Silver Plan", :price => 2000, :billing_period => 30
+bronze = Jackpot::Subscription.create :name => 'Bronze', :description => "Bronze plan", :price => 1000, :billing_period => 30
 Rails.logger.info "Subscriptions plans created"
+
 Jackpot::User.create :email => 'test@demo.com', :password => 'jackpot', :password_confirmation => 'jackpot'
 Rails.logger.info "Test user created"
 
