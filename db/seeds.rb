@@ -4,30 +4,37 @@
 # Plans 
 #
 ActiveMerchant::Billing::Base.mode = :test
-def card(params)
-  Jackpot::Card.new(:first_name => params[:first_name], 
-                    :last_name => params[:last_name], 
-                    :number => params[:number], 
-                    :month => 1, 
-                    :year => Date.today.year.next,
-                    :verification_value => 123)
+def card_hash(params)
+  { 
+    :first_name => params[:first_name], 
+    :last_name => params[:last_name], 
+    :number => params[:number], 
+    :month => 1, 
+    :year => Date.today.year.next,
+    :verification_value => 123
+  }
 end 
 
-Jackpot::Subscription.create :name => 'Gold',   :price => 3000, :billing_period => 30
-Jackpot::Subscription.create :name => 'Silver', :price => 2000, :billing_period => 30
-Jackpot::Subscription.create :name => 'Bronze', :price => 1000, :billing_period => 30
-Rails.logger.info "Subscriptions plans created"
+gold = Jackpot::Subscription.create :name => 'Gold',   :price => 3000, :billing_period => 30
+silver = Jackpot::Subscription.create :name => 'Silver', :price => 2000, :billing_period => 30
+bronze = Jackpot::Subscription.create :name => 'Bronze', :price => 1000, :billing_period => 30
 
+Rails.logger.info "Subscriptions plans created"
 Jackpot::User.create :email => 'test@demo.com', :password => 'jackpot', :password_confirmation => 'jackpot'
 Rails.logger.info "Test user created"
 
 # Customers with fake credit cards
+john_card = card_hash( :first_name => 'John', :last_name => 'Doe', :number => '5555555555554444')
+john_doe = Customer.create :email => 'john@doe.com', 
+  :jackpot_subscription_id => gold.id, :credit_card => john_card
 
-john_doe = Jackpot::Customer.create :email => 'john@doe.com', :description => 'Great customer'
-john_doe.update_credit_card card(:first_name => 'John', :last_name => 'Doe', :number => '5555555555554444')
 Rails.logger.info "John doe created"
-
-tim_armstrong = Jackpot::Customer.create :email => 'tim@armstrong.com', :description => 'Old school client'
-tim_armstrong.update_credit_card card(:first_name => 'Tim', :last_name => 'Armstrong', :number => '4111111111111111')
-
+tim_card = card_hash(:first_name => 'John', :last_name => 'Doe', :number => '4111111111111111')
+tim_armstrong = Customer.create :email => 'tim@armstrong.com', 
+  :jackpot_subscription_id => silver.id, :credit_card => tim_card
 Rails.logger.info "Tim Armstrong created"
+
+no_subscriber = Customer.create :email => 'not@alover.com', 
+  :jackpot_subscription_id => nil, :credit_card => tim_card
+Rails.logger.info "No Subscriber created"
+
