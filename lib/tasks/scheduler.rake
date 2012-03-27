@@ -5,3 +5,6 @@ task :cron => :environment do
   cron = Jackpot::Cron.new(Jackpot::Customer, Rails.logger)
   cron.run
 end 
+
+
+task :clean_database => [ 'db:schema:load', 'db:seed' ]
