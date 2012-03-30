@@ -2,7 +2,7 @@ desc "This task is called by the Heroku scheduler add-on"
 
 task :cron => :environment do
   Customer.all.each do |c|
-    c.pay_jackpot_subscription if c.subscription.present? 
+    c.pay_jackpot_subscription 
   end 
 end 
 

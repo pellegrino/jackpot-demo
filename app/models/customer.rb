@@ -15,11 +15,11 @@ class Customer < ActiveRecord::Base
   end 
 
   def pay_jackpot_subscription
-    jackpot_instance.pay_subscription unless jackpot_instance.nil?
+    jackpot_instance.pay_subscription if jackpot_instance.present? and jackpot_instance.subscription.present?
   end 
 
   private
   def jackpot_instance
-    Jackpot::Customer.find self.jackpot_customer_id
+    @jackpot_customer_instance ||= Jackpot::Customer.find self.jackpot_customer_id
   end 
 end
