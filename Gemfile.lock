@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/pellegrino/jackpot.git
-  revision: 2ab1bdb73f206e27acf7450195f27ce66a9a47e5
+  revision: c1216c2e0bd83cbe2aa01e3109eee35ba08ad35d
   specs:
     jackpot (0.0.3)
       activemerchant (~> 1.20)
